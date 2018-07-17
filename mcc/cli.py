@@ -1,18 +1,35 @@
 # -*- coding: utf-8 -*-
 
 """Console script for mcc."""
-import sys
+import os
 import click
+from pydub import AudioSegment
+from pydub.silence import split_on_silence
 
 
 @click.command()
-def main(args=None):
+@click.argument('sound_path')
+@click.option('--mls', default=500, help='沉默的时长，毫秒')
+@click.option('--st', default=-30, help='无声的界限，如果比这个数值更小则认为是无声')
+@click.option('--name', default=0, help='分割出来文件的名字，默认从0开始')
+def cli(sound_path, mls, st, name):
     """Console script for mcc."""
-    click.echo("Replace this message by putting your code into "
-               "mcc.cli.main")
-    click.echo("See click documentation at http://click.pocoo.org/")
-    return 0
 
+    sound = AudioSegment.from_wav(sound_path)
+    chunks = split_on_silence(sound,
+                              # 沉默的时长, 毫秒
+                              min_silence_len=mls,
+                              # 如果比silence_thresh这个数值更安静则认为是无声
+                              silence_thresh=st
+                              )
+    print(f'碎片数量: {len(chunks)}')
 
-if __name__ == "__main__":
-    sys.exit(main())  # pragma: no cover
+    # 创建文件夹
+    dirname = f'{name}-{name + len(chunks) - 1}'
+    if not os.path.exists(dirname):
+        os.makedirs(dirname)
+
+    for i, chunk in enumerate(chunks):
+        # 导出文件
+        chunk.export(f'{dirname}/{name + i}.wav', format='wav')
+

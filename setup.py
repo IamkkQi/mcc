@@ -35,7 +35,7 @@ setup(
     description="mcc",
     entry_points={
         'console_scripts': [
-            'mcc=mcc.cli:main',
+            'mcc=mcc.cli:cli',
         ],
     },
     install_requires=requirements,

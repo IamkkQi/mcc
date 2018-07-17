@@ -103,3 +103,6 @@ ENV/
 
 # github
 .github/
+
+.idea/
+media/
