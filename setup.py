@@ -13,9 +13,9 @@ with open('HISTORY.rst') as history_file:
 
 requirements = ['Click>=6.0', ]
 
-setup_requirements = ['pydub']
+setup_requirements = ['pydub', ]
 
-test_requirements = ['pydub']
+test_requirements = ['pydub', ]
 
 setup(
     author="Kaikai Qi",
