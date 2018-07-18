@@ -23,27 +23,22 @@ you through the process.
 .. _Python installation guide: http://docs.python-guide.org/en/latest/starting/installation/
 
 
-From sources
+源码安装
 ------------
 
-The sources for mcc can be downloaded from the `Github repo`_.
+从 github 上下载 源码 `Github repo`_.
 
-You can either clone the public repository:
+你也可以从公共的仓库中克隆:
 
 .. code-block:: console
 
     $ git clone git://github.com/iamkkqi/mcc
 
 
-Or download the `tarball`_:
-
-.. code-block:: console
-
-    $ curl  -OL https://github.com/iamkkqi/mcc/tarball/master
-
 如果你已经克隆了项目你就可以通过下面两种方式安装使用:
 
-方法一：
+方法一:
+
 .. code-block:: console
 
     $ python setup.py install
@@ -58,6 +53,7 @@ Or download the `tarball`_:
     $ . env/bin/activate
 
 然后把项目安装到虚拟环境中:
+
 .. code-block:: console
 
     $ pip install e .
