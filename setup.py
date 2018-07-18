@@ -15,7 +15,7 @@ requirements = ['Click>=6.0', ]
 
 setup_requirements = ['pydub', ]
 
-test_requirements = ['pydub', ]
+test_requirements = []
 
 setup(
     author="Kaikai Qi",
