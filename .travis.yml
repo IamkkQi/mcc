@@ -4,10 +4,6 @@ python:
 #- 3.5
 #- 3.4
 #- 2.7
-before_install:
-  - sudo add-apt-repository ppa:mc3man/trusty-media
-  - sudo apt-get update
-  - sudo apt-get install ffmpeg
 
 install: pip install -U tox-travis
 script: tox
