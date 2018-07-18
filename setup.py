@@ -32,10 +32,11 @@ setup(
         # 'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
-    description="mcc",
+    description="语音操作快捷命令",
     entry_points={
         'console_scripts': [
-            'mcc=mcc.cli:main',
+            'sp=mcc.split:main',
+            'sy=mcc.synthesize:main',
         ],
     },
     install_requires=requirements,
@@ -49,6 +50,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/iamkkqi/mcc',
-    version='0.1.1',
+    version='0.1.3',
     zip_safe=False,
 )

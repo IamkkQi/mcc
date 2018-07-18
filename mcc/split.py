@@ -13,7 +13,7 @@ from pydub.silence import split_on_silence
 @click.option('--st', default=-30, help='无声的界限，如果比这个数值更小则认为是无声')
 @click.option('--name', default=0, help='分割出来文件的名字，默认从0开始')
 def main(sound_path, mls, st, name):
-    """Console script for mcc."""
+    """切割一段带有停顿的空白语音"""
 
     sound = AudioSegment.from_wav(sound_path)
     chunks = split_on_silence(sound,
