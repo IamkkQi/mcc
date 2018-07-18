@@ -10,7 +10,9 @@ env:
 before_install:
   - sudo add-apt-repository ppa:mc3man/trusty-media -y
   - sudo apt-get update --fix-missing
-install: pip install -U tox-travis
+install:
+  - pip install -U tox-travis
+  - sudo apt-get install -y ${CONVERTER} libopus-dev python-scipy python3-scipy
 script: tox
 deploy:
   provider: pypi
