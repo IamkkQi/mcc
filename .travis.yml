@@ -4,15 +4,11 @@ python:
 #- 3.5
 #- 3.4
 #- 2.7
-env:
-  - CONVERTER=ffmpeg
-  - CONVERTER="libav-tools libavcodec-extra-54"
 before_install:
-  - sudo add-apt-repository ppa:mc3man/trusty-media -y
-  - sudo apt-get update --fix-missing
-install:
-  - pip install -U tox-travis
-  - sudo apt-get install -y ${CONVERTER} libopus-dev python-scipy python3-scipy
+  - sudo apt-get install libav-tools
+  - sudo apt-get install ffmpeg
+
+install: pip install -U tox-travis
 script: tox
 deploy:
   provider: pypi
