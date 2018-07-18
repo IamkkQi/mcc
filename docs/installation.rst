@@ -34,17 +34,34 @@ You can either clone the public repository:
 
     $ git clone git://github.com/iamkkqi/mcc
 
+
 Or download the `tarball`_:
 
 .. code-block:: console
 
     $ curl  -OL https://github.com/iamkkqi/mcc/tarball/master
 
-Once you have a copy of the source, you can install it with:
+如果你已经克隆了项目你就可以通过下面两种方式安装使用:
 
+方法一：
 .. code-block:: console
 
     $ python setup.py install
+
+
+方法二：
+
+然后进入项目虚拟环境（我这里是已经创建好的虚拟环境）:
+
+.. code-block:: console
+
+    $ . env/bin/activate
+
+然后把项目安装到虚拟环境中:
+.. code-block:: console
+
+    $ pip install e .
+
 
 
 .. _Github repo: https://github.com/iamkkqi/mcc
